@@ -1,0 +1,43 @@
+
+<div *ngIf="selected" id="carta">
+  <app-series-detail [serieDetail]="selectedSerie"></app-series-detail>
+ </div>
+ 
+
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">#</th>
+          <th class="h4">Name</th>
+          <th class="h4">Channel</th>
+          <th class="h4">Seasons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of series">
+          <td>
+            <dd>{{c.id}}</dd>
+          </td>
+          <td>
+            <dd><a href="#" id="enl" (click)="onSelected(c)">{{c.name}}</a></dd>
+          </td>
+          <td>
+            <dd>{{c.channel}}</dd>
+          </td>
+          <td>
+            <dd>{{c.seasons}}</dd>
+          </td>
+      </tr>
+      </tbody>
+      
+    </table>
+    <p>Average Seasons: {{ calcularAVGTemporadas() }}</p>
+
+
+ 
+
+ </div>
+</div>
+
